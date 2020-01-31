@@ -5,14 +5,14 @@
 ## 使用
 
 ```JavaScript
-import '@oneline/style/lib/index.scss'
+import '@oneline/style/dist/index.css'
 ```
 
 ```css
-@import '@oneline/style/lib/index.scss'
+@import '@oneline/style/dist/index.css'
 ```
 
-## 说明
+<!-- ## 说明 -->
 
 
 
