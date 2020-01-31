@@ -1,0 +1,31 @@
+{
+  "name": "@oneline/style",
+  "version": "0.0.1",
+  "description": "oneline 样式库",
+  "author": "keep2zero <towaywu@gmail.com>",
+  "homepage": "https://github.com/onelineteam/oneline-style/tree/master#readme",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://keep2zero@github.com/onelineteam/oneline-style.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "compiler": "node-sass lib/index.scss -o dist/index.css"
+  },
+  "bugs": {
+    "url": "https://github.com/onelineteam/oneline-ui/issues"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "node-sass": "^4.13.1"
+  }
+}

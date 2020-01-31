@@ -1,0 +1,22 @@
+//
+$fs-sizes:(8, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60);
+// @for $i from 9 through 60 {
+//   $fs-sizes:append($fs-sizes, $i);
+// }
+
+//
+$rect-sizes:(50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 1920);
+//@for $i from 30 through 1920 {
+//  $rect-sizes:append($rect-sizes, $i);
+//}
+
+$spacing-size: (-5,-3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 60, 80, 90, 100);
+// @for $i from 3 through 100 {
+//   $spacing-size:append($spacing-size, $i);
+// }
+$border-size: (1, 2, 3, 5, 8, 10);
+// @for $i from 1 through 10 {
+//   $border-size:append($border-size, $i);
+// }
+
+$colors:(#F1646C, #F3C74D, #4D79F6, #1ECAB8, #FFFFFF, #292929);

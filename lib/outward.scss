@@ -1,0 +1,49 @@
+
+//样式
+//.ol-c (color)
+//.ol-bg (background)
+//.ol-bg-c (background-color)
+//.ol-b (border)
+//.ol-br (border-radius)
+
+.ol {
+  &-b {
+    @include loopBorder($border-size, $colors, px)
+  }
+  
+  &-br {
+    @include loopBorderRadius($border-size, px);
+  }
+  
+
+
+  &-c {
+    @include loopColor(color, $colors)
+  }
+
+  &-bg-c {
+    @include loopColor(background-color, $colors)
+  }
+
+
+  &-bg {
+
+  }
+}
+
+
+//
+
+.ol-block {
+  display: block;
+}
+
+.ol-inline {
+  display: inline-block;
+}
+
+.ol-hover {
+  &:hover, &:active {
+    opacity: 0.6;
+  }
+}

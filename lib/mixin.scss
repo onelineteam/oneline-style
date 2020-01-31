@@ -1,0 +1,92 @@
+//
+@mixin loopSize($name, $size, $unit) {
+  @each $s in $size {
+    &-#{$s} {
+      #{$name}: #{$s}#{$unit};  
+    } 
+  }
+}
+
+@mixin  loopSpacing($name, $size, $unit) {
+  @each $s in $size {
+    &-#{$s} {
+      #{$name}: #{$s}#{$unit};  
+      &__l {
+        #{$name}-left: #{$s}#{$unit};  
+      }
+      &__r {
+        #{$name}-right: #{$s}#{$unit};  
+      }
+      &__t {
+        #{$name}-top: #{$s}#{$unit};  
+      }
+      &__b {
+        #{$name}-bottom: #{$s}#{$unit};  
+      }
+    }
+  }
+}
+
+@mixin loopBorder($size, $color, $unit) {
+  @each $s in $size {
+
+    @each $c in $color {
+      $name: str-slice($c+"", 2);
+      @debug $name;
+      &-#{$s}__#{$name} {
+        border: #{$s}#{$unit} #{$c} solid;  
+        &-l {
+          border-left: #{$s}#{$unit} #{$c} solid;  
+        }
+        &-r {
+          border-right: #{$s}#{$unit} #{$c} solid;  
+        }
+        &-t {
+          border-top: #{$s}#{$unit} #{$c} solid;  
+        }
+        &-b {
+          border-bottom: #{$s}#{$unit} #{$c} solid;  
+        }
+      }
+    }
+  }
+}
+
+@mixin loopBorderRadius($size, $unit) {
+  @each $s in $size {
+    @debug $s;
+    &-#{$s} {
+      border-radius: #{$s}#{$unit};
+    }
+
+  }
+}
+
+
+@mixin loopColor($prefix, $colors) {
+  @each $c in $colors {
+    $name: str-slice($c+"", 2);
+    &-#{$name} {
+      #{$prefix}: #{$c};
+    }
+  }
+}
+
+
+@mixin  loopPosition($size, $unit) {
+  @each $s in $size { 
+      &__l-#{$s} {
+        left: #{$s}#{$unit};  
+      }
+      &__r-#{$s} {
+        right: #{$s}#{$unit};  
+      }
+      &__t-#{$s} {
+        top: #{$s}#{$unit};  
+      }
+      &__b-#{$s} {
+        bottom: #{$s}#{$unit};  
+      }
+    
+  }
+}

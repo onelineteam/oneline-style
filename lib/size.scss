@@ -1,0 +1,45 @@
+
+//大小
+//.ol-fs (font-size)
+//.ol-w (ol-width)
+//.ol-h (ol-height)
+.ol {
+  &-fs {
+    @include loopSize(font-size, $fs-sizes, px)
+  }
+}
+
+.ol {
+  &-w {
+    @include loopSize(width, $rect-sizes, px);
+    &__per {
+      @include loopSize(width, $rect-sizes, '%');
+    }
+  }
+
+  &-h {
+    @include loopSize(height, $rect-sizes, px);
+    &__per {
+      @include loopSize(height, $rect-sizes, '%');
+    }
+  }
+}
+
+//间距
+//.ol-lh (line-height)
+//.ol-m (margin)
+//.ol-p (padding)
+
+.ol{
+  &-p {
+    @include loopSpacing(padding, $spacing-size, px);
+  }
+
+  &-m {
+    @include loopSpacing(margin, $spacing-size, px);
+  }
+
+  &-lh {
+    @include loopSize(line-height, $spacing-size, px);
+  }
+}
