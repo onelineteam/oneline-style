@@ -30,7 +30,7 @@ ol-lh | line-height | 行高
 ### 布局样式
 
 类名 | 作用 | 描述
-- | - | -
+--|--|--
 ol-layout-h | 水平布局 | 水平方式布局
 ol-layout-v | 垂直布局 | 垂直方式布局
 ol-layout-g | 格子布局 | 格子方式布局
@@ -41,7 +41,7 @@ ol-ps-fx | fixed定位 | 相对于可视窗口定位
 ### 外部样式
 
 类名 | 解释 | 描述
-- | - | -
+--|--|--
 ol-c | color | 文字颜色
 ol-bg-c | background-color | 背景颜色
 ol-b | border | 边框
