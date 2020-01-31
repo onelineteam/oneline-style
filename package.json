@@ -22,7 +22,7 @@
     "compiler": "node-sass lib/index.scss -o dist/index.css"
   },
   "bugs": {
-    "url": "https://github.com/onelineteam/oneline-ui/issues"
+    "url": "https://github.com/onelineteam/oneline-style/issues"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
