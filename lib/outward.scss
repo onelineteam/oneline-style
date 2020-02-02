@@ -64,13 +64,13 @@
 
   &__l {
     &::after {
-      left: -#{12 * --size-mult--}#{$size-unit};
+      left: #{12 * --size-mult--}#{$size-unit};
     }
   }
 
   &__r {
     &::after {
-      right: -#{12 * --size-mult--}#{$size-unit};
+      right: #{12 * --size-mult--}#{$size-unit};
     }
   }
 }
