@@ -61,4 +61,16 @@
     right: 0;
     bottom: -#{1 * --size-mult--}#{$size-unit};
   }
+
+  &__l {
+    &::after {
+      left: -#{12 * --size-mult--}#{$size-unit};
+    }
+  }
+
+  &__r {
+    &::after {
+      right: -#{12 * --size-mult--}#{$size-unit};
+    }
+  }
 }
