@@ -18,9 +18,9 @@ import '@oneline/style/dist/index.app.css';
 
 ```javascript
 
- <script src="http://cdn.jsdelivr.net/npm/@oneline/style@0.0.2/dist/index.css"></script>
+ <script src="http://cdn.jsdelivr.net/npm/@oneline/style@0.0.3/dist/index.css"></script>
  // or app
- <script src="http://cdn.jsdelivr.net/npm/@oneline/style@0.0.2/dist/index.app.css"></script>
+ <script src="http://cdn.jsdelivr.net/npm/@oneline/style@0.0.3/dist/index.app.css"></script>
 
 ```
 
