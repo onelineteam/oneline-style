@@ -47,3 +47,18 @@
     opacity: 0.6;
   }
 }
+
+//
+.ol-line {
+  position: relative;
+  &::after {
+    display: block;
+    content: " ";
+    height: #{1 * --size-mult--}#{$size-unit};
+    background-color: $color-border-gray;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -#{1 * --size-mult--}#{$size-unit};
+  }
+}
