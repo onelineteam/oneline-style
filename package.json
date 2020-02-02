@@ -1,6 +1,6 @@
 {
   "name": "@oneline/style",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "oneline 样式库",
   "author": "keep2zero <towaywu@gmail.com>",
   "homepage": "https://github.com/onelineteam/oneline-style/tree/master#readme",
@@ -19,6 +19,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "yarn run compiler && yarn run compiler:min && yarn run compiler:app && yarn run compiler:app:min",
     "compiler": "bin/oneline-style",
     "compiler:min": "bin/oneline-style --min",
     "compiler:app:min": "bin/oneline-style --type app --min",
