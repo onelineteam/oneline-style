@@ -142,7 +142,7 @@
     transform: translate(-50%, -50%);
   }
    
-  @include loopPosition($spacing-size,px)
+  @include loopPosition($spacing-size,$size-unit)
 
 }
 

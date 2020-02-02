@@ -1,5 +1,6 @@
+$size-unit: --size-unit-- /*%unit%*/;
 //
-$fs-sizes:(8, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60);
+$fs-sizes: --fs-sizes-- /**/;
 // @for $i from 9 through 60 {
 //   $fs-sizes:append($fs-sizes, $i);
 // }

@@ -8,11 +8,11 @@
 
 .ol {
   &-b {
-    @include loopBorder($border-size, $colors, px)
+    @include loopBorder($border-size, $colors, $size-unit)
   }
   
   &-br {
-    @include loopBorderRadius($border-size, px);
+    @include loopBorderRadius($border-size, $size-unit);
   }
   
 

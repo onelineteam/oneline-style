@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+const commander = require('commander');
+commander.option("-t, --type <type>", "编译类型: pc, app");
+commander.option("--min", "是否压缩");
+
+require("./style");

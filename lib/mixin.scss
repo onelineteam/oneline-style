@@ -2,26 +2,27 @@
 @mixin loopSize($name, $size, $unit) {
   @each $s in $size {
     &-#{$s} {
-      #{$name}: #{$s}#{$unit};  
+      #{$name}: #{$s * --size-mult--}#{$unit};  
     } 
   }
 }
 
 @mixin  loopSpacing($name, $size, $unit) {
   @each $s in $size {
+     
     &-#{$s} {
-      #{$name}: #{$s}#{$unit};  
+      #{$name}: #{$s * --size-mult--}#{$unit};  
       &__l {
-        #{$name}-left: #{$s}#{$unit};  
+        #{$name}-left: #{$s * --size-mult--}#{$unit};  
       }
       &__r {
-        #{$name}-right: #{$s}#{$unit};  
+        #{$name}-right: #{$s * --size-mult--}#{$unit};  
       }
       &__t {
-        #{$name}-top: #{$s}#{$unit};  
+        #{$name}-top: #{$s * --size-mult--}#{$unit};  
       }
       &__b {
-        #{$name}-bottom: #{$s}#{$unit};  
+        #{$name}-bottom: #{$s * --size-mult--}#{$unit};  
       }
     }
   }
@@ -29,23 +30,23 @@
 
 @mixin loopBorder($size, $color, $unit) {
   @each $s in $size {
-
+    
     @each $c in $color {
       $name: str-slice($c+"", 2);
-      @debug $name;
+      // @debug $name;
       &-#{$s}__#{$name} {
-        border: #{$s}#{$unit} #{$c} solid;  
+        border: #{$s * --size-mult--}#{$unit} #{$c} solid;  
         &-l {
-          border-left: #{$s}#{$unit} #{$c} solid;  
+          border-left: #{$s * --size-mult--}#{$unit} #{$c} solid;  
         }
         &-r {
-          border-right: #{$s}#{$unit} #{$c} solid;  
+          border-right: #{$s * --size-mult--}#{$unit} #{$c} solid;  
         }
         &-t {
-          border-top: #{$s}#{$unit} #{$c} solid;  
+          border-top: #{$s * --size-mult--}#{$unit} #{$c} solid;  
         }
         &-b {
-          border-bottom: #{$s}#{$unit} #{$c} solid;  
+          border-bottom: #{$s * --size-mult--}#{$unit} #{$c} solid;  
         }
       }
     }
@@ -54,9 +55,9 @@
 
 @mixin loopBorderRadius($size, $unit) {
   @each $s in $size {
-    @debug $s;
+    // @debug $s;
     &-#{$s} {
-      border-radius: #{$s}#{$unit};
+      border-radius: #{$s * --size-mult--}#{$unit};
     }
 
   }
@@ -76,16 +77,16 @@
 @mixin  loopPosition($size, $unit) {
   @each $s in $size { 
       &__l-#{$s} {
-        left: #{$s}#{$unit};  
+        left: #{$s * --size-mult--}#{$unit};  
       }
       &__r-#{$s} {
-        right: #{$s}#{$unit};  
+        right: #{$s * --size-mult--}#{$unit};  
       }
       &__t-#{$s} {
-        top: #{$s}#{$unit};  
+        top: #{$s * --size-mult--}#{$unit};  
       }
       &__b-#{$s} {
-        bottom: #{$s}#{$unit};  
+        bottom: #{$s * --size-mult--}#{$unit};  
       }
     
   }

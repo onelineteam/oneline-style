@@ -5,20 +5,20 @@
 //.ol-h (ol-height)
 .ol {
   &-fs {
-    @include loopSize(font-size, $fs-sizes, px)
+    @include loopSize(font-size, $fs-sizes, $size-unit)
   }
 }
 
 .ol {
   &-w {
-    @include loopSize(width, $rect-sizes, px);
+    @include loopSize(width, $rect-sizes, $size-unit);
     &__per {
       @include loopSize(width, $rect-sizes, '%');
     }
   }
 
   &-h {
-    @include loopSize(height, $rect-sizes, px);
+    @include loopSize(height, $rect-sizes, $size-unit);
     &__per {
       @include loopSize(height, $rect-sizes, '%');
     }
@@ -32,14 +32,14 @@
 
 .ol{
   &-p {
-    @include loopSpacing(padding, $spacing-size, px);
+    @include loopSpacing(padding, $spacing-size, $size-unit);
   }
 
   &-m {
-    @include loopSpacing(margin, $spacing-size, px);
+    @include loopSpacing(margin, $spacing-size, $size-unit);
   }
 
   &-lh {
-    @include loopSize(line-height, $spacing-size, px);
+    @include loopSize(line-height, $spacing-size, $size-unit);
   }
 }
