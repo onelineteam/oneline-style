@@ -4,12 +4,24 @@
 
 ## 使用
 
+### 预处理或者js导入方式
+
 ```JavaScript
-import '@oneline/style/dist/index.css'
+
+import '@oneline/style/dist/index.css';
+//or app css
+import '@oneline/style/dist/index.app.css';
+
 ```
 
-```css
-@import '@oneline/style/dist/index.css'
+### 脚本引入方式
+
+```javascript
+
+ <script src="http://cdn.jsdelivr.net/npm/@oneline/style@0.0.2/dist/index.css"></script>
+ // or app
+ <script src="http://cdn.jsdelivr.net/npm/@oneline/style@0.0.2/dist/index.app.css"></script>
+
 ```
 
 ## 说明
