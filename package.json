@@ -1,6 +1,6 @@
 {
   "name": "@oneline/style",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "oneline 样式库",
   "author": "keep2zero <towaywu@gmail.com>",
   "homepage": "https://github.com/onelineteam/oneline-style/tree/master#readme",
@@ -19,13 +19,20 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "compiler": "node-sass lib/index.scss -o dist/index.css"
+    "compiler": "bin/oneline-style",
+    "compiler:min": "bin/oneline-style --min",
+    "compiler:app:min": "bin/oneline-style --type app --min",
+    "compiler:app": "bin/oneline-style --type app"
   },
   "bugs": {
     "url": "https://github.com/onelineteam/oneline-style/issues"
   },
   "devDependencies": {
+    "commander": "^4.1.0",
     "gulp": "^4.0.2",
     "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "@oneline/utils": "^0.0.5"
   }
 }
