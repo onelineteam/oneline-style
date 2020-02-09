@@ -1,0 +1,114 @@
+
+.ol {
+  // &-fs-0 {
+  //   font-size: 0;
+  // }
+
+
+  &-status-navigation {
+    background-color: #FFF;
+
+  }
+
+  &-status-bar {
+    height: 40rpx;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &-navigation-bar {
+    height: 88rpx;
+    font-size: 34rpx;
+    color: #000;
+    &__back {
+      width: 36rpx;
+      color: #666;
+      margin-right: 20rpx;
+    }
+
+    &__title {
+      
+    }
+  }
+
+  &-tabs-bar {
+    background-color: #FFF;
+    height: 120rpx;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &::before {
+      display: block;
+      content: " ";
+      height: 2rpx;
+      background-color: #e8e8e8;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+
+    &__item {
+      padding: 16rpx 0;
+      &_on {
+        color: #07C160
+      }
+    }
+
+    &__icon {
+      width: 56rpx;
+      height: 56rpx;
+      margin-bottom: 4rpx;
+    }
+
+    &__label {
+      line-height: 1.4;
+    }
+
+  }
+
+  &-line-before {
+    &::before {
+      display: block;
+      content: " ";
+      height: 2rpx;
+      background-color: #e8e8e8;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -2rpx;
+    }
+  }
+
+
+
+  // &-pos__rt {
+  //   right: -10rpx;
+  //   top: -4rpx;
+  // }
+
+  // &-pos-ix__9 {
+  //   z-index: 9;
+  // }
+
+
+  &-badge {
+    line-height: 1.2;
+    padding: 4rpx 6rpx;
+    border-radius: 30rpx;
+    color: #fff;
+    background-color: #FA5151;
+    text-align: center;
+    font-size: 18rpx;
+    vertical-align: middle;
+
+    &__dot {
+      @extend .ol-badge;
+      padding: 8rpx;
+      min-width: 0;
+    }
+
+  }
+}
