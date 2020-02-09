@@ -10,19 +10,19 @@
   }
 
   &-status-bar {
-    height: 40rpx;
+    height: 40#{$size-unit};
     width: 100%;
     background-color: transparent;
   }
 
   &-navigation-bar {
-    height: 88rpx;
-    font-size: 34rpx;
+    height: 88#{$size-unit};
+    font-size: 34#{$size-unit};
     color: #000;
     &__back {
-      width: 36rpx;
+      width: 36#{$size-unit};
       color: #666;
-      margin-right: 20rpx;
+      margin-right: 20#{$size-unit};
     }
 
     &__title {
@@ -32,7 +32,7 @@
 
   &-tabs-bar {
     background-color: #FFF;
-    height: 120rpx;
+    height: 120#{$size-unit};
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -41,7 +41,7 @@
     &::before {
       display: block;
       content: " ";
-      height: 2rpx;
+      height: 2#{$size-unit};
       background-color: #e8e8e8;
       position: absolute;
       left: 0;
@@ -50,7 +50,7 @@
     }
 
     &__item {
-      padding: 16rpx 0;
+      padding: 16#{$size-unit} 0;
       &_on {
         color: #07C160
       }
@@ -59,7 +59,7 @@
     &__icon {
       width: 56rpx;
       height: 56rpx;
-      margin-bottom: 4rpx;
+      margin-bottom: 4#{$size-unit};
     }
 
     &__label {
@@ -72,12 +72,12 @@
     &::before {
       display: block;
       content: " ";
-      height: 2rpx;
+      height: 2#{$size-unit};
       background-color: #e8e8e8;
       position: absolute;
       left: 0;
       right: 0;
-      top: -2rpx;
+      top: -2#{$size-unit};
     }
   }
 
@@ -95,17 +95,17 @@
 
   &-badge {
     line-height: 1.2;
-    padding: 4rpx 6rpx;
+    padding: 4#{$size-unit} 6#{$size-unit};
     border-radius: 30rpx;
     color: #fff;
     background-color: #FA5151;
     text-align: center;
-    font-size: 18rpx;
+    font-size: 18#{$size-unit};
     vertical-align: middle;
 
     &__dot {
       @extend .ol-badge;
-      padding: 8rpx;
+      padding: 8#{$size-unit};
       min-width: 0;
     }
 
