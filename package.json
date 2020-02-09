@@ -23,7 +23,8 @@
     "compiler": "bin/oneline-style",
     "compiler:min": "bin/oneline-style --min",
     "compiler:app:min": "bin/oneline-style --type app --min",
-    "compiler:app": "bin/oneline-style --type app"
+    "compiler:app": "bin/oneline-style --type app",
+    "dev": "node view/runtime/index.js"
   },
   "bugs": {
     "url": "https://github.com/onelineteam/oneline-style/issues"
