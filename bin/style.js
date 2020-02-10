@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const commander = require('commander');
-const builder = require(',/builder');
+const builder = require('./builder');
 
 commander.parse(process.argv);
 

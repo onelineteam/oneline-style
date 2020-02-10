@@ -26,6 +26,8 @@ module.exports = function builder(type = "pc", isMin) {
     importer(url, prev, done) {
       const abpath = path.resolve(path.dirname(prev), url);
 
+      console.log(abpath, url);
+
       let content = fs.readFileSync(abpath);
       Object.keys(variable).forEach((key => {
         const varRegx = new RegExp(`--${key}--`, "ig");
