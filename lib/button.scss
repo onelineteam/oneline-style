@@ -1,0 +1,110 @@
+.ol-btn, button {
+  position: relative;
+  display: inline-block; 
+  padding: 8px 24px;
+  font-weight: 700;
+  font-size: 17px;
+  text-align: center;
+  vertical-align: bottom;
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  line-height: 1.42;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  overflow: hidden;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(216,217,219,.5);
+  }
+
+  &:hover, &:active {
+    border-color: #dae0e5;
+    background-color: #dae0e5;
+  }
+
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+  }
+  
+
+}
+
+ .ol-btn {
+   &_auto {
+     border-radius: 0;
+   }
+ }
+
+
+.ol-btn {
+
+
+  &_default {
+    color: #292929;
+    background-color: #eee;
+  }
+
+  &_primary {
+    background-color: $color-primary;
+  }
+
+  &_danger {
+    background-color: $color-danger;
+  }
+
+  &_warning {
+    background-color: $color-warning;
+  }
+
+  &_success {
+    background-color: $color-success;
+  }
+
+  &_info {
+    background-color: $color-info;
+  }
+
+  &_dark {
+   background-color: $color-dark;
+  }
+
+ 
+
+  &_pink {
+    background-color: $color-pink;
+  }
+
+
+  &_muted {
+    background-color: $color-muted;
+  }
+
+  &_purple {
+    background-color: $color-purple;
+  }
+
+  &_link {
+    background-color: $color-link;
+  }
+}
+
+
+//
+.ol-btn_circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
