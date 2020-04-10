@@ -25,11 +25,23 @@ $color-border-gray: #E8E8E8;
 
 
 $color-primary: #4d79f6;
+$color-primary-hover: #255df7;
+
 $color-secondary: #4ac7ec;
+$color-secondary-hover: #0ebaee;
+
 $color-success: #1ecab8;
+$color-success-hover: #06ceba;
+
 $color-warning: #f3c74d;
+$color-warning-hover: #f1b308;
+
 $color-info: #9ba7ca;
+$color-info-hover: #8b9ac7;
+
 $color-danger: #f1646c;
+$color-danger-hover: #f54952;
+
 $color-dark: #2f4686;
 $color-light: #f1f5fa;
 $color-link: #8997bd;
@@ -37,3 +49,6 @@ $color-pink: #ff5da0;
 $color-purple: #7551e9;
 $color-white: #fff;
 $color-muted: #a4abc5;
+
+
+$color-styles: (primary, secondary, success, warning,info,danger,dark,light,link,pink,purple,white, gray, muted)

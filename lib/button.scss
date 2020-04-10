@@ -1,6 +1,7 @@
-.ol-btn, button {
+.ol-btn,
+button {
   position: relative;
-  display: inline-block; 
+  display: inline-block;
   padding: 8px 24px;
   font-weight: 700;
   font-size: 17px;
@@ -16,84 +17,91 @@
   overflow: hidden;
 
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(216,217,219,.5);
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
   }
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     border-color: #dae0e5;
     background-color: #dae0e5;
   }
 
-
   &__icon {
     display: inline-block;
+    align-items: center;
     vertical-align: middle;
-    width: 24px;
-    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 8px;
   }
-  
-
 }
-
- .ol-btn {
-   &_auto {
-     border-radius: 0;
-   }
- }
-
 
 .ol-btn {
-
-
-  &_default {
-    color: #292929;
-    background-color: #eee;
-  }
-
-  &_primary {
-    background-color: $color-primary;
-  }
-
-  &_danger {
-    background-color: $color-danger;
-  }
-
-  &_warning {
-    background-color: $color-warning;
-  }
-
-  &_success {
-    background-color: $color-success;
-  }
-
-  &_info {
-    background-color: $color-info;
-  }
-
-  &_dark {
-   background-color: $color-dark;
-  }
-
- 
-
-  &_pink {
-    background-color: $color-pink;
-  }
-
-
-  &_muted {
-    background-color: $color-muted;
-  }
-
-  &_purple {
-    background-color: $color-purple;
-  }
-
-  &_link {
-    background-color: $color-link;
+  &_auto {
+    border-radius: 0;
   }
 }
 
+//设置背景
+@mixin colorBgStyle($property) {
+  @each $type in --color-style-- {
+    &_#{$type} {
+      #{$property}: --color-#{$type}--;
+      &:hover,
+      &:active {
+        #{$property}: --color-#{$type}-hover--;
+      }
+    }
+  }
+}
+//设置边框
+@mixin colorBorderStyle($property) {
+  @each $type in --color-style-- {
+    &_#{$type} {
+      #{$property}: --color-#{$type}--;
+      color: --color-#{$type}--;
+      background-color: --color-white--;
+      &:hover,
+      &:active {
+        #{$property}: --color-#{$type}-hover--;
+        background-color: --color-#{$type}--;
+        color: --color-white--;
+      }
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($color: #dedede, $alpha: 0.6);
+      }
+    }
+  }
+}
+
+.ol-btn {
+  &_default {
+    color: #292929;
+    background-color: --color-default--;
+  }
+
+  &_light {
+    color: #929daf;
+    background-color: --color-light--;
+  }
+  @include colorBgStyle(background-color);
+}
+
+.ol-btn-o {
+  &_default {
+    border-color: --color-default--;
+    color: #292929;
+    background-color: --color-white--;
+  }
+
+  &_light {
+    border-color: --color-light--;
+    color: #929daf;
+    background-color: --color-white--;
+  }
+
+  @include colorBorderStyle(border-color);
+}
 
 //
 .ol-btn_circle {
@@ -107,4 +115,77 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  image,
+  img,
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    stroke: #fff;
+    margin-right: unset;
+  }
+}
+
+//
+.ol-btn-sp {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  image,
+  img,
+  svg,
+  .ol-btn__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
+    padding: 8px;
+    border-right: rgba(0, 0, 0, 0.2) 1px solid;
+    margin-right: 8px;
+    font-size: 100%;
+    position: relative;
+
+    // &:after {
+    //   display: inline-block;
+    //   height: 100%;
+    //   position: absolute;
+    //   right: 0;
+    //   top: 0;
+    //   bottom: 0;
+    //   background-color:rgba(0,0,0,0.2);
+    //   width: 1px;
+    //   content: " ";
+
+    // }
+  }
+}
+
+//大小
+.ol-btn_sm {
+  padding: 2px 6px;
+}
+
+.ol-btn_md {
+  padding: 4px 12px;
+}
+
+.ol-btn_lg {
+  padding: 12px 36px;
+}
+
+//加载
+@keyframes olBtnLoading {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+.ol-btn_loading {
+  .ol-btn__icon {
+    animation: olBtnLoading 1s steps(12, end) infinite;
+  }
 }

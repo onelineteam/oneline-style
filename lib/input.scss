@@ -1,0 +1,12 @@
+input, .ol-input {
+  background: transparent;
+  padding: 0;
+  outline: none;
+  border: 1px solid #eee;
+}
+
+.ol-input {
+  &-nob {
+    border-color: transparent;
+  }
+}

@@ -84,14 +84,14 @@
 
 
 
-    // 
+    //
 
     &-g {
       display: grid;
       overflow: hidden;
       white-space: nowrap;
       &__item {
-        overflow: hidden;
+        // overflow: hidden;
       }
       &.gap-10 {
         grid-gap: 10px;

@@ -1,0 +1,37 @@
+.ol-group {
+  display: flex;
+  align-items: stretch;
+ 
+  overflow: hidden;
+  
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+     
+    &_m {
+      flex: 1;
+    }
+     
+  }
+
+  &-b {
+    border: 1px solid #eee;
+  }
+
+  &-br {
+    border-radius: 3px;
+  }
+
+  &_pill {
+    border-radius: 24px;
+    .ol-btn {
+      &:focus, &:hover {
+        box-shadow: unset;
+        border-color: transparent;
+      }
+    }
+     
+  }
+}
