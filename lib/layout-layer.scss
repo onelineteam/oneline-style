@@ -1,0 +1,72 @@
+.ol-layers {
+  position: relative;
+  overflow: hidden;
+
+  .ol-layer {
+    position: absolute;
+    
+    &__rt {
+      right: 0;
+      top: 0;
+    }
+
+    &__r {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__rb {
+      right: 0;
+      bottom: 0;
+    }
+
+    // 
+
+    &__lt {
+      left: 0;
+      top: 0;
+    }
+
+    &__l {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__lb {
+      left: 0;
+      bottom: 0;
+    }
+
+    &__t {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &__b {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    //居中
+    &__c {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    } 
+    
+    //占满 fill
+    &__f {
+      left: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
+    }
+
+
+  }
+}
+

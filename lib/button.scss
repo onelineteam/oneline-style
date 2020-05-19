@@ -3,7 +3,7 @@ button {
   position: relative;
   display: inline-block;
   padding: 8px 24px;
-  font-weight: 700;
+  // font-weight: 700;
   font-size: 17px;
   text-align: center;
   vertical-align: bottom;
@@ -163,15 +163,18 @@ button {
 
 //大小
 .ol-btn_sm {
-  padding: 2px 6px;
+  padding: size(2) size(6);
+  font-size: size(12);
 }
 
 .ol-btn_md {
-  padding: 4px 12px;
+  padding: size(4) size(12);
+  font-size: size(14);
 }
 
 .ol-btn_lg {
-  padding: 12px 36px;
+  padding: size(12) size(36);
+
 }
 
 //加载

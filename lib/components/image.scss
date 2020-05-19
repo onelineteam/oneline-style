@@ -1,0 +1,42 @@
+.ol-img {
+  max-width: 100%;
+  max-height: 100%;
+
+  &-r_min, &-r_s, &-r_m, &-r_b {
+    border-radius: 100%;
+  }
+
+
+  &_min, &-r_min {
+    width: size(30);
+    height: size(30);
+  }
+
+  &_s, &-r_s {
+    width: size(50);
+    height: size(50);
+  }
+
+  &_m, &-r_m {
+    width: size(80);
+    height: size(80);
+  }
+
+  &_b, &-r_b {
+    width: size(120);
+    height: size(120);
+  }
+
+
+  @each $s in (100, 120, 160,  180, 200, 260, 300, 360, 400, 500) {
+    &-#{$s} {
+      width: size($s);
+      height: size($s);
+    }
+    &-#{$s}_rect {
+      width: size($s);
+      height: size($s * 0.6);
+    }
+  }
+}
+

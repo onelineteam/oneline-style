@@ -1,6 +1,6 @@
-const {start} = require('@oneline/core');
+const { start } = require('@oneline/core');
 const Watchpack = require('watchpack');
-const watch = new Watchpack({poll: true});
+const watch = new Watchpack({ poll: true });
 const path = require('path');
 const fs = require('fs');
 const builder = require('../../bin/builder')
@@ -12,10 +12,10 @@ let socket = null;
 
 
 watch.watch([], [appFile, htmlFile], Date.now());
-watch.on('change',(filePath) => {
+watch.on('change', (filePath) => {
   // console.log("文件改变", ":", filePath);
   builder('pc', false);
-  if(socket) {
+  if (socket) {
     socket.send("true");
   }
 });
@@ -34,36 +34,63 @@ const cssTemplate = `
   <link rel="stylesheet" href="/css/index.css" type="text/css">
 `
 
-const app = start(5000, {static: {prefix: "/css", path: path.resolve(__dirname, "../../dist")}}, [], ()=>{
+const app = start(5000, { static: { prefix: "/css", path: path.resolve(__dirname, "../../dist") } }, [], () => {
   console.log("启动成功")
 })
 
-app.get("/:page", (request, response)=>{
-   const page = request.params.page; 
-   const file = path.resolve(__dirname, "../pages/" + page);
-   if(fs.existsSync(file)) {
-    const fileData = fs.readFileSync(file);
-     
+function getCommon() {
+
+  let index = fs.readFileSync(path.resolve(__dirname, "../pages/index.html")).toString("utf-8");
+  index = index.replace("</head>", cssTemplate + "</head>");
+  index = index.replace("</body>", socketTemplate + "</body>");
+  return index;
+}
+
+
+app.get("/view/*", (request, response) => {
+  // console.log(request);
+  const page = request.params["*"];
+  const file = path.resolve(__dirname, "../pages/" + page);
+  if (fs.existsSync(file)) {
     response.type("text/html")
-    let content = fileData.toString();
-    content = content.replace("</head>", cssTemplate + "</head>");
-    content = content.replace("</body>", socketTemplate + "</body>");
+    let content = "";
+    if (page === 'index.html') {
+      content = index;
+    } else {
+      const fileData = fs.readFileSync(file);
+      content = fileData.toString();
+
+      const indexs = content.match(/<\/?body.*?>/ig);
+      console.log(indexs)
+      if(indexs) {
+        content = content.substring(content.indexOf(indexs[0]) + indexs[0].length, content.indexOf(indexs[1]));
+
+      }
+      // console.log(indexs, indexs[0], indexs[1], content.indexOf(indexs[0]), content.indexOf(indexs[1]))
+
+      // console.log(content)
+
+      content = getCommon().replace('{{body}}', content);
+    }
+
+    
+
     response.send(content);
   } else {
     response.type("text/html")
     response.send("file not found: 404")
-   }
+  }
 })
 
 app.register(require('fastify-websocket'), {
   handle,
   options: {
-    maxPayload: 1048576, 
+    maxPayload: 1048576,
     path: '/live'
   }
 })
 
-function handle (conn) {
+function handle(conn) {
   conn.pipe(conn) // creates an echo server
   socket = conn.socket;
 }

@@ -1,8 +1,22 @@
 
-@import './reset.scss';
-/////////
+
+
+
+
+
+
 @import './variable.scss';
 @import './mixin.scss';
+
+//大小
+@function size($size) {
+  @return ($size * $size-mult) + $size-unit;
+}
+
+
+
+@import './reset.scss';
+/////////
 @import './layout.scss';
 @import './outward.scss';
 @import './size.scss';
@@ -18,3 +32,7 @@
 @import './button.scss';
 @import './input.scss';
 @import './group.scss';
+@import './layout-layer.scss';
+
+@import './components/index.scss';
+@import './form/index.scss';

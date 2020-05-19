@@ -1,0 +1,11 @@
+.ol-a {
+  color: --color-primary--;
+  text-decoration: none;
+
+  &:hover, &__active {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+
+  
+}

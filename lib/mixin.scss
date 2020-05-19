@@ -1,93 +1,135 @@
 //
-@mixin loopSize($name, $size, $unit) {
+@mixin loopSize($name, $size) {
   @each $s in $size {
     &-#{$s} {
-      #{$name}: #{$s * --size-mult--}#{$unit};  
-    } 
+      #{$name}: size($s);
+    }
   }
 }
 
-@mixin  loopSpacing($name, $size, $unit) {
+@mixin loopPerSize($name) {
+  @for $i from 1 through 24 {
+    &-#{$i} {
+      #{$name}: nth($per-sizes, $i)#{"%"};
+    }
+  }
+}
+
+@mixin loopSpacing($name, $size) {
   @each $s in $size {
-     
     &-#{$s} {
-      #{$name}: #{$s * --size-mult--}#{$unit};  
+      #{$name}: size($s);
       &__l {
-        #{$name}-left: #{$s * --size-mult--}#{$unit};  
+        #{$name}-left: size($s);
       }
       &__r {
-        #{$name}-right: #{$s * --size-mult--}#{$unit};  
+        #{$name}-right: size($s);
       }
       &__t {
-        #{$name}-top: #{$s * --size-mult--}#{$unit};  
+        #{$name}-top: size($s);
       }
       &__b {
-        #{$name}-bottom: #{$s * --size-mult--}#{$unit};  
+        #{$name}-bottom: size($s);
       }
     }
   }
 }
 
-@mixin loopBorder($size, $color, $unit) {
+@mixin loopBorder($size) {
   @each $s in $size {
-    
-    @each $c in $color {
-      $name: str-slice($c+"", 2);
-      // @debug $name;
-      &-#{$s}__#{$name} {
-        border: #{$s * --size-mult--}#{$unit} #{$c} solid;  
-        &-l {
-          border-left: #{$s * --size-mult--}#{$unit} #{$c} solid;  
+    @each $type in --color-style-- {
+      &-#{$type}_#{$s} {
+        border: size($s) --color-#{$type}-- solid;
+        &__l {
+          border-left: size($s) --color-#{$type}-- solid;
         }
-        &-r {
-          border-right: #{$s * --size-mult--}#{$unit} #{$c} solid;  
+        &__r {
+          border-right: size($s) --color-#{$type}-- solid;
         }
-        &-t {
-          border-top: #{$s * --size-mult--}#{$unit} #{$c} solid;  
+        &__t {
+          border-top: size($s) --color-#{$type}-- solid;
         }
-        &-b {
-          border-bottom: #{$s * --size-mult--}#{$unit} #{$c} solid;  
+        &__b {
+          border-bottom: size($s) --color-#{$type}-- solid;
         }
       }
+      // $name: str-slice($c+"", 2);
+      // // @debug $name;
+      // &-#{$s}__#{$name} {
+      //   border: size($s) #{$c} solid;
+      //   &-l {
+      //     border-left: size($s) #{$c} solid;
+      //   }
+      //   &-r {
+      //     border-right: size($s) #{$c} solid;
+      //   }
+      //   &-t {
+      //     border-top: size($s) #{$c} solid;
+      //   }
+      //   &-b {
+      //     border-bottom: size($s) #{$c} solid;
+      //   }
+      // }
     }
   }
 }
 
-@mixin loopBorderRadius($size, $unit) {
+@mixin loopBorderRadius($size) {
   @each $s in $size {
     // @debug $s;
     &-#{$s} {
-      border-radius: #{$s * --size-mult--}#{$unit};
-    }
+      border-radius: size($s)!important;
 
+      &__tl {
+        border-top-left-radius: size($s)!important;
+      }
+      &__tr {
+        border-top-right-radius: size($s)!important;
+      }
+      &__bl {
+        border-bottom-left-radius: size($s)!important;
+      }
+      &__br {
+        border-bottom-right-radius: size($s)!important;
+      }
+    }
   }
 }
 
-
 @mixin loopColor($prefix, $colors) {
   @each $c in $colors {
-    $name: str-slice($c+"", 2);
+    $name: str-slice($c + "", 2);
     &-#{$name} {
       #{$prefix}: #{$c};
     }
   }
 }
 
+@mixin loopPosition($size, $unit) {
+  @each $s in $size {
+    &__l-#{$s} {
+      left: #{$s * --size-mult--}#{$unit} !important;
+    }
+    &__r-#{$s} {
+      right: #{$s * --size-mult--}#{$unit} !important;
+    }
+    &__t-#{$s} {
+      top: #{$s * --size-mult--}#{$unit} !important;
+    }
+    &__b-#{$s} {
+      bottom: #{$s * --size-mult--}#{$unit} !important;
+    }
+  }
+}
 
-@mixin  loopPosition($size, $unit) {
-  @each $s in $size { 
-      &__l-#{$s} {
-        left: #{$s * --size-mult--}#{$unit};  
+@mixin colorStyle($property) {
+  @each $type in --color-style-- {
+    &_#{$type} {
+      #{$property}: --color-#{$type}-- !important;
+      &:hover,
+      &:active {
+        #{$property}: --color-#{$type}-hover-- !important;
       }
-      &__r-#{$s} {
-        right: #{$s * --size-mult--}#{$unit};  
-      }
-      &__t-#{$s} {
-        top: #{$s * --size-mult--}#{$unit};  
-      }
-      &__b-#{$s} {
-        bottom: #{$s * --size-mult--}#{$unit};  
-      }
-    
+    }
   }
 }

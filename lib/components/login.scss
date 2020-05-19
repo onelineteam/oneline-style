@@ -1,0 +1,44 @@
+.ol-join-box {
+  padding: size(30);
+  &__logo {
+    margin-bottom: size(30);
+    color: #fff;
+  }
+
+
+  &__title {
+    font-size: size(20);
+    color: #fff;
+  }
+
+  &__subtitle {
+    font-size: size(14);
+    color: #ccc;
+    line-height: size(25);
+  }
+
+  &__form {
+    margin: size(30) 0;
+    background: #fff; 
+    padding: size(20);
+    border-radius: size(5);
+    input {
+      display: block;
+      width: 100%;
+      font-size: size(14);
+      padding: size(5) size(8);
+      border: none;
+    }
+  }
+
+  &__ft {
+    
+    .ol-split {
+      margin: 0 size(8);
+      color: #aaa
+    }
+    .ol-a {
+      color: #fff;
+    }
+  }
+}

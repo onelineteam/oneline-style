@@ -1,0 +1,28 @@
+.ol-card {
+  background: #fff;
+  display: inline-block;
+  border-radius: size(5);
+  overflow: hidden;
+  border: #efefef size(1) solid;
+
+  &-hd {
+    padding: size(10);
+  }
+  &-thumb {
+    
+  }
+
+  &-title {
+    font-size: size(14);
+  }
+
+  &-subtitle {
+    font-size: size(12);
+    color: #666;
+  }
+
+  &-bd {
+    padding: size(8) size(10);
+  }
+
+}

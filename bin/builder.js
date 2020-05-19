@@ -26,11 +26,13 @@ function replaceVar(content, variable) {
 
 module.exports = function builder(type = "pc", isMin) {
 
-  const fsSizes = new WayArray(8, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60)
-
+  const fsSizes = new WayArray(8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60)
+  const perSizes = new WayArray();
+  for(let i = 1; i <= 24; i++ ) perSizes.push(100/i);
   
   const variable = {
     "fs-sizes": fsSizes,
+    "per-sizes": perSizes,
     "size-unit": type == 'app' ? 'rpx' : 'px',
     "size-mult": type == 'app' ? 2 : 1,
     ...scssVar
@@ -42,6 +44,8 @@ module.exports = function builder(type = "pc", isMin) {
   const min = isMin ? 'compressed' : 'expanded';
 
 
+  const pathMap = {};
+
 
 
   sass.render({
@@ -50,18 +54,35 @@ module.exports = function builder(type = "pc", isMin) {
     outFile: resolve('../dist'),
     outputStyle: min, //compact | compressed | expanded
     importer(url, prev, done) {
-      const abpath = path.resolve(path.dirname(prev), url);
+      
+      // console.log(prev, abpath, url);
+      
+      //简单处理一下路径问题
+      if(!pathMap[url]) {
+        if(path.isAbsolute(prev)) {
+          pathMap[url] = prev; 
+        } else {
+          pathMap[url] = path.resolve(path.dirname(pathMap[prev]),prev);
+        }
+      }
 
-      console.log(abpath, url);
+      // console.log(pathMap, url);
+      const abpath = path.resolve(path.dirname(pathMap[url]), url);
 
-      let content = fs.readFileSync(abpath);
+      if(fs.existsSync(abpath)) {
+        let content = fs.readFileSync(abpath);
+
+        content = replaceVar(content.toString('utf-8'), variable);
+  
+        //   console.log(content);
+        //   console.log(url, prev, done, path.resolve(prev, url), path.dirname(prev));
+  
+        return { path: abpath, contents: content }
+      }
+
+      done(new Error("米有文件"))
+
      
-      content = replaceVar(content.toString('utf-8'), variable);
-
-      //   console.log(content);
-      //   console.log(url, prev, done, path.resolve(prev, url), path.dirname(prev));
-
-      return { path: abpath, contents: content }
     }
   },
 

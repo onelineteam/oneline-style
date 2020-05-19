@@ -1,0 +1,65 @@
+.ol {
+  &-h1 {
+    font-size: size(38)
+  }
+
+  &-h2 {
+    font-size: size(30)
+  }
+  &-h3 {
+    font-size: size(24)
+  }
+
+  &-h4 {
+    font-size: size(20)
+  }
+
+  &-h5 {
+    font-size: size(16)
+  }
+
+  &-h6 {
+    font-size: size(12)
+  }
+
+  &-text, &-text-second {
+
+    &_s {
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    &_m {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &_b {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    line-height: 100%;
+    .ol-icon, .ol-tag {
+      margin-right: size(6);
+    }
+  }
+
+  &-text {
+    font-size: size(12);
+    color: #000;
+    
+  }
+
+  &-text-second {
+    font-size: size(12);
+    color: --color-muted--;
+    &_s,&_m,&_b {
+      color: --color-muted--;
+      .ol-icon, .ol-tag {
+        margin-right: size(6);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,92 @@
+.code-box {
+   border: #eee 1px solid;
+   border-radius: 5px;
+   background: #fff;
+   margin-bottom: 20px;
+}
+
+.code-box-demo {
+   padding: 42px 24px 50px;
+   color: rgba(0, 0, 0, .85);
+   border-bottom: 1px solid #f0f0f0
+}
+
+.code-box .code-box-title,
+.code-box .code-box-title a {
+    color: rgba(0, 0, 0, .85);
+    background: #fff
+}
+.code-box .code-box-description p {
+    color: rgba(0, 0, 0, .85)
+}
+
+
+.code-box-title {
+   position: absolute;
+   top: -14px;
+   margin-left: 16px;
+   padding: 1px 8px;
+   color: #777;
+   background: #fff;
+   border-radius: 2px 2px 0 0;
+   -webkit-transition: background-color .4s;
+   transition: background-color .4s
+}
+ 
+.code-box-title a,
+.code-box-title a:hover {
+   color: rgba(0, 0, 0, .85);
+   font-weight: 500;
+   font-size: 14px
+}
+
+.code-box-description {
+   padding: 18px 24px 12px
+}
+
+.code-box-meta {
+   position: relative;
+   width: 100%;
+   font-size: 14px;
+   border-radius: 0 0 2px 2px;
+   -webkit-transition: background-color .4s;
+   transition: background-color .4s
+}
+
+.code-box-meta blockquote {
+   margin: 0
+}
+
+.code-box-meta h4,
+section.code-box-meta p {
+   margin: 0
+}
+
+.code-box-meta > p {
+   width: 100%;
+   margin: .5em 0;
+   padding-right: 25px;
+   font-size: 12px;
+   word-break: break-word
+}
+
+.code-box-actions {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  > span, > View, > i, > div, > p, > image, > img,  > Text {
+     margin-right: 10px;
+     color: #6f6f6f;
+  }
+  > span:last-child, > View:last-child, > i:last-child, > div:last-child, > p:last-child, > image:last-child, > img:last-child, > Text:last-child {
+     margin-right: 0;
+  }
+
+  padding-top: 12px;
+    text-align: center;
+    border-top: 1px dashed #f0f0f0;
+    opacity: .7;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s
+
+}

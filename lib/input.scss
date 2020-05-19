@@ -1,12 +1,182 @@
-input, .ol-input {
-  background: transparent;
-  padding: 0;
-  outline: none;
-  border: 1px solid #eee;
+//
+.ol-input_sm,
+.ol-input-affix.ol-input_sm {
+  padding: size(0) size(2) !important;
+  font-size: size(12) !important;
 }
 
+.ol-input_md,
+.ol-input-affix.ol-input_md {
+  padding: size(6) size(9) !important;
+  font-size: size(16) !important;
+}
+
+.ol-input_lg,
+.ol-input-affix.ol-input_lg {
+  padding: size(10) size(13);
+  font-size: size(18);
+}
+
+.ol-input-addon.ol-input_sm {
+  padding: 0;
+  .ol-input,
+  .ol-input-affix {
+    padding: size(0) size(2) !important;
+    font-size: size(12) !important;
+  }
+}
+.ol-input-addon.ol-input_md {
+  padding: 0 !important;
+  .ol-input-affix {
+    padding: 0 size(8) 0 0 !important;
+  }
+
+  .ol-input {
+    padding: size(6) size(9) !important;
+    font-size: size(16) !important;
+  }
+}
+.ol-input-addon.ol-input_lg {
+  .ol-input-affix {
+    padding: 0 size(8) 0 0 !important;
+  }
+
+  .ol-input {
+    padding: size(10) size(13) !important;
+    font-size: size(18) !important;
+  }
+}
+
+//
+
+input,
 .ol-input {
+  background: transparent;
+  outline: none;
+  font-size: size(14);
+  line-height: 1.5;
+}
+
+.ol-input,
+.ol-input-addon,
+.ol-input-affix,
+input {
+  border: size(1) solid $color-muted;
+  padding: size(5) size(8);
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+  }
+}
+
+//
+
+.ol-input {
+  //
+  &-affix {
+    display: inline-flex;
+    align-items: center;
+
+    .affix {
+      display: inline-flex;
+    }
+
+    .ol-input {
+      border: none;
+      box-shadow: none;
+      flex: 1;
+      padding: 0 size(8);
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+    }
+  }
+
+  //
   &-nob {
     border-color: transparent;
+  }
+
+  //
+  &-addon {
+    display: inline-table;
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: size(14);
+    border: 0;
+
+    .ol-input-affix {
+      .ol-input {
+        padding: 0 size(8) 0 0;
+      }
+    }
+
+    .ol-input {
+      display: table-cell;
+      box-shadow: none;
+      padding: size(5) size(8);
+      background-color: #fff;
+      border-radius: 0;
+    }
+
+    .addon {
+      display: table-cell;
+      background-color: #efefef;
+      padding: 0 size(8);
+      width: size(1);
+
+      border: size(1) solid $color-muted;
+      white-space: nowrap;
+      vertical-align: middle;
+      &:first-child {
+        border-right: 0;
+      }
+
+      &:last-child {
+        border-left: 0;
+      }
+    }
+  }
+
+  //
+}
+
+.ol-input_line {
+  border: 0;
+  border-bottom: 1px solid #f0f0f0;
+  &.ol-input-affix,
+  &.ol-input-addon {
+    border: 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    .addon,
+    .affix,
+    .ol-input,
+    .ol-input-affix {
+      border: 0 !important;
+      background-color: transparent;
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: none;
+    }
+
+    .ol-input-affix {
+      &:focus,
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
   }
 }

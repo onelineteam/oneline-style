@@ -1,0 +1,48 @@
+.ol-shop-event {
+  background: --color-pink--;
+  padding: size(20) size(10);
+  &-title {
+    font-size: size(22);
+    text-align: center; 
+  }
+
+  &-subtitle {
+    font-size: size(14);
+    text-align: center;
+    color: #333;
+  }
+
+  &-item {
+    margin-top: 10px;
+    display: flex;
+    background-color: #fff; 
+    padding: size(20);
+  }
+
+  &-thumb {
+    max-width: 200px;
+    margin-right: 20px;
+  }
+
+  &-info {
+    &__title {
+      font-size: size(22);
+    }
+    &__subtitle {
+      font-size: size(10);
+      color: #ccc;
+    }
+
+    &__price {
+      padding: size(8) 0;
+      label {
+        font-size: size(16);
+        font-weight: normal;
+      }
+
+      .ol-price {
+        font-size: size(24);
+      }
+    }
+  }
+}

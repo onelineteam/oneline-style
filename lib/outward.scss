@@ -8,21 +8,24 @@
 
 .ol {
   &-b {
-    @include loopBorder($border-size, $colors, $size-unit)
+    @include loopBorder($border-size)
   }
   
   &-br {
-    @include loopBorderRadius($border-size, $size-unit);
+    border-radius: 100%!important;
+    @include loopBorderRadius($border-size);
   }
   
 
 
   &-c {
-    @include loopColor(color, $colors)
+    @include loopColor(color, $colors);
+    @include colorStyle(color);
   }
 
   &-bg-c {
-    @include loopColor(background-color, $colors)
+    @include loopColor(background-color, $colors);
+    @include colorStyle(background-color);
   }
 
 
@@ -49,28 +52,64 @@
 }
 
 //
-.ol-line {
+.ol-line, .ol-line__l, .ol-line__r {
   position: relative;
   &::after {
     display: block;
     content: " ";
-    height: #{1 * --size-mult--}#{$size-unit};
+    height: size(1);
     background-color: $color-border-gray;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -#{1 * --size-mult--}#{$size-unit};
+    bottom: -#{size(1)};
   }
 
   &__l {
+    padding-left: size(12);
     &::after {
-      left: #{12 * --size-mult--}#{$size-unit};
+      left: size(12);
     }
   }
 
   &__r {
+    padding-right: size(12);
     &::after {
-      right: #{12 * --size-mult--}#{$size-unit};
+      right: size(12);
     }
   }
+}
+
+
+//价格
+.ol-price, .ol-price_s, .ol-price_m,  .ol-price_b {
+  display: inline-block;
+  font-size: size(18);
+  color: --color-danger--;
+  i, .ol-price__mark {
+    font-size: size(12);
+    font-style: normal;
+  }
+
+  &_b {
+    font-size: size(24);
+    i, .ol-price__mark {
+      font-size: size(18);
+    }
+  }
+
+  &_s {
+    font-size: size(14);
+    i, .ol-price__mark {
+      font-size: size(8);
+    }
+  }
+
+  &_m {
+    font-size: size(22);
+    i, .ol-price__mark {
+      font-size: size(16);
+    }
+  }
+
 }

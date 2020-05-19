@@ -1,0 +1,6 @@
+.ol-tag {
+  display: inline-block;
+  padding: size(2) size(8);
+  color: #ffffff;
+  @include colorStyle(background-color);
+}

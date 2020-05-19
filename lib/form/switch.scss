@@ -1,0 +1,65 @@
+.ol-switch {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-size: size(14);
+  line-height: size(20);
+  height: size(20);
+  vertical-align: middle;
+
+  &__inner {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: size(40);
+    height: size(20);
+    border: size(1) solid #dcdfe6;
+    outline: none;
+    border-radius: size(10);
+    box-sizing: border-box;
+    background: #dcdfe6;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+    vertical-align: middle;
+    &::after {
+      content: "";
+      position: absolute;
+      top: size(1);
+      left: size(1);
+      border-radius: 100%;
+      transition: all 0.3s;
+      width: size(16);
+      height: size(16);
+      background-color: #fff;
+    }
+  }
+
+  &-active {
+    .ol-switch__inner {
+      &::after {
+        left: unset;
+        right: size(2);
+      }
+    }
+  }
+
+  &_primary {
+    .ol-switch__inner {
+      background-color: --color-primary--;
+    }
+  }
+
+  &_success {
+    .ol-switch__inner {
+      background-color: --color-success--;
+    }
+  }
+
+  &_danger {
+    .ol-switch__inner {
+      background-color: --color-danger--;
+    }
+  }
+}
+
+ 

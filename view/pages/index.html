@@ -1,14 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>测试</title>
-</head>
-<body>
-    
+  <title>主页</title>
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #eee;
+    }
+    .home .ol-layout-header {
+      color: #fff;
+    }
 
+    .example-nav {
+      
+    }
+
+    .example-nav h3 { 
+       color: #666;
+       border-bottom: #bbb 1px solid;
+       margin: 16px 0;
+       padding: 6px 20px;
+       font-size: 12px;
+    }
+
+    .example-nav > li {
+      
+      font-size: 16px;
+      color: #fff;
+      padding: 8px 0;
+      position: relative;
+    }
+
+     
+
+    .example-nav a {
+      font-size: 14px;
+      color: #000;
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    .example-nav a.active {
+      background: #e6f7ff;
+      position: relative;
+    }
+    .example-nav a.active::after {
+      display: block;
+      content: " ";
+      position: absolute;
+      right:0;
+      width: 3px;
+      background: #1890ff;
+      top: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body class="home">
+
+  <div class="ol-layout">
+    <header class="ol-layout-header">
+      <div class="ol-layout-h c-space-b">
+        <h1>@oneline/style</h1>
+        <div>github</div>
+      </div>
+    </header>
+    <section class="ol-layout   ol-layout-has-sider">
+      <aside class="ol-layout-sider" style='width: 200px; flex: 0 0 200px; background: #fff;'>
+        <div class="ol-layout-sider-children">
+
+
+          <ul class="example-nav">
+            <li>
+              <h3>基本样式</h3>
+              <ul>
+                <li><a href="/view/basic/text-size.html" class="active">文字大小</a></li>
+                <li><a href="/view/basic/rect.html">宽度和高度</a></li>
+                <li><a href="/view/basic/color.html">前景色和背景色</a></li>
+                <li><a href="/view/basic/text-align.html">文本排版</a></li>
+                <li><a href="/view/basic/pdmg.html">间隙</a></li>
+                <li><a href="/view/basic/border.html">边框圆角</a></li>
+                <li><a href="/view/basic/block.html">行内、行块, 行高</a></li>
+                <li><a href="/view/basic/line.html">线条</a></li>
+              </ul>
+            </li>
+            <li><h3>布局</h3>
+              <ul>
+                <li><a href="/view/layout/layout.html">框架布局</a></li>
+                <li> <a href="/view/layout/layout-layer.html">层次</a></li>
+                <li><a href="/view/layout/layout-grid.html">grid布局</a></li>
+                <li><a href="/view/layout/layout-h.html">水平布局</a></li>
+                <li><a href="/view/layout/layout-v.html">垂直布局</a></li>
+              </ul>
+            </li>
+            <li><h3>导航</h3>
+              <ul>
+                <li> <a href="/view/navigation/navigationbar.html">导航栏</a></li>
+                <li><a href="/view/navigation/tabsbar.html">选项栏导航</a></li>
+                <li><a href="/view/navigation/menu.html">菜单</a></li>
+                <li><a href="/view/navigation/tabs.html">选项卡</a></li>
+                <li><a href="/view/navigation/grid-guid.html">格子引导</a></li>
+              </ul>
+            </li>
+            <li><h3>表单</h3>
+              <ul>
+                <li><a href="/view/forms/button.html">按钮</a></li>
+                <li><a href="/view/group.html">组合</a></li>
+                <li> <a href="/view/list/cell.html">单格</a></li>
+                <li> <a href="/view/forms/input.html">输入框</a></li>
+                <li> <a href="/view/forms/check.html">复选框</a></li>
+                <li> <a href="/view/forms/switch.html">switch</a></li>
+              </ul>
+            </li>
+            <li><h3>组件</h3>
+              <ul>
+                <li> <a href="/view/components/basic.html">基础组件</a></li> 
+                <li> <a href="/view/components/image.html">图片</a></li> 
+                <li> <a href="/view/components/card.html">卡片</a></li> 
+                <li> <a href="/view/components/text.html">文本</a></li> 
+                <li> <a href="/view/components/link.html">链接</a></li> 
+                <li> <a href="/view/components/price.html">价格</a></li> 
+                <li> <a href="/view/components/login.html">登录</a></li> 
+              </ul>
+            </li>
+
+
+
+          </ul>
+          
+         
+        </div>
+      </aside>
+      <main class="ol-layout-content ol-p-20">
+        {{body}}
+      </main>
+    </section>
+    <footer class='ol-layout-footer'>Copy Right Oneline Team.</footer>
+  </div>
+
+  <script src="https://unpkg.com/jquery@3.5.0/dist/jquery.js"></script>
+
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+   <script src="/css/js/index.js"></script>   
 
 </body>
+
 </html>

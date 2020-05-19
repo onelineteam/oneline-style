@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    .example .code-box-demo p {
+      margin-top: 20px;
+    }
+  </style>
+
+  <div class="example">
+
+
+
+    <!--  -->
+    <div class="code-box">
+      <div class="code-box-demo">
+        <p class='ol-bg-c_muted ol-b-primary_1'>hello, muted</p>
+        <p class='ol-bg-c_info ol-b-success_5'>hello, info</p>
+        <p class='ol-bg-c_primary ol-b-pink_5__l'>hello, primary</p>
+        <p class='ol-bg-c_success ol-b-pink_5__r'>hello, success</p>
+        <p class='ol-bg-c_warning ol-b-pink_5__b'>hello, warning</p>
+        <p class='ol-bg-c_dark ol-b-pink_5__t'>hello, dark</p>
+
+      </div>
+      <div class="code-box-meta">
+        <div class="code-box-title">
+          <h4>边框</h4>
+        </div>
+        <p class="code-box-description">
+          边框以 <code class='ol-tag ol-tag_muted'>.ol-b-</code>作为前缀，主要有： primary, success, warning, danger, pink, purple,
+          pink, light, dark, muted.
+          <br>其中还需要包含其边框的大小, 以下划线( _ ) 拼接大小: <code class='ol-tag ol-tag_muted'>.ol-b-[color]_[number]</code>. 大小主要有： (1,
+          2, 3, 5, 8, 10)。
+          <br>如果指定某个方向的边框，则已两个下划线拼接方向： l, t, r, b， 分别为left, top, right, bottom.
+        </p>
+      </div>
+      <div class="code-box-actions"></div>
+    </div>
+
+
+    <!--  -->
+    <div class="code-box">
+      <div class="code-box-demo">
+        <p class='ol-bg-c_muted ol-w-60 ol-h-60 ol-ta-c ol-br'>hello, muted</p>
+        <p class='ol-bg-c_info ol-br-5__tr'>hello, info</p>
+        <p class='ol-bg-c_primary ol-br-5__tl'>hello, primary</p>
+        <p class='ol-bg-c_success ol-br-5__br'>hello, success</p>
+        <p class='ol-bg-c_warning ol-br-5__bl'>hello, warning</p>
+        <p class='ol-bg-c_dark ol-br-5'>hello, dark</p>
+
+      </div>
+      <div class="code-box-meta">
+        <div class="code-box-title">
+          <h4>圆角</h4>
+        </div>
+        <p class="code-box-description">
+          圆角以 <code class='ol-tag ol-tag_muted'>.ol-br</code>作为前缀，默认为值为100%, 所以基本都是正方形的物体，表现最佳。 
+          <br>其中还需要包含其圆角的大小, 以下横线( - ) 拼接大小: <code class='ol-tag ol-tag_muted'>.ol-br-[number]</code>. 大小主要有： (1,
+          2, 3, 5, 8, 10)。
+          <br>如果指定某个方向的圆角，则已两个下划线( __ )拼接方向： tl, tr, br, bl， 分别为top-left, top-right, bottom-right, bottom-left.
+        <br>
+         完整路径： <code class='ol-tag ol-tag_muted'>.ol-br-[number]__[direct]</code>
+
+        </p>
+      </div>
+      <div class="code-box-actions"></div>
+    </div>
+    <!--  -->
+
+  </div>
+
+</body>
+
+</html>

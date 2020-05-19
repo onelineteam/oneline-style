@@ -6,6 +6,61 @@
 //.ol-zi (z-index)
 .ol {
   &-layout {
+
+
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    min-height: 0;
+
+    &-header, &-footer {
+      flex: 0 0 auto;
+    }
+
+    &-header {
+      height: 64px;
+      padding: 0 50px;
+      line-height: 64px;
+      background: #001529;
+      color:rgba(0, 0, 0, 0.65);
+    }
+
+    &-content {
+      flex: auto;
+      min-height: 0;
+    }
+
+    &-has-sider {
+      flex-direction: row;
+    }
+
+    &-sider {
+
+      position: relative; 
+      min-width: 0;
+      background: #001529;
+      transition: all 0.2s;
+
+      &-children {
+        height: 100%;
+        margin-top: -0.1px; 
+        padding-top: 0.1px;
+      }
+
+    }
+
+    &-footer {
+      padding: 24px 50px;
+      font-size: 14px;
+      color:rgba(0, 0, 0, 0.65);
+      background: #f0f2f5;
+    }
+
+
+
+
+
+    ///////
     &-h, &-v {
       display: flex;
       align-items: center;
@@ -52,7 +107,7 @@
         justify-content: space-around;
       }
 
-      &.c-center {
+      &.c-cent {
         justify-content: center;
       }
 
@@ -93,6 +148,7 @@
       &__item {
         // overflow: hidden;
       }
+      
       &.gap-10 {
         grid-gap: 10px;
         padding: 10px;
@@ -114,6 +170,22 @@
 
       &.g-5 {
         grid-template-columns: repeat(5, 1fr);
+      }
+
+      &.g-6 {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      &.g-7 {
+        grid-template-columns: repeat(7, 1fr);
+      }
+
+      &.g-8 {
+        grid-template-columns: repeat(8, 1fr);
+      }
+
+      &.g-9 {
+        grid-template-columns: repeat(9, 1fr);
       }
     }
   }
@@ -152,6 +224,14 @@
 
 }
 
+
+.ol-zi {
+  @each $s in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
+    &-#{$s} {
+      z-index: $s;
+    }
+  }
+}
 
 
 
