@@ -1,6 +1,6 @@
 {
   "name": "@oneline/style",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "oneline 样式库",
   "author": "keep2zero <towaywu@gmail.com>",
   "homepage": "https://github.com/onelineteam/oneline-style/tree/master#readme",
@@ -34,14 +34,13 @@
     "url": "https://github.com/onelineteam/oneline-style/issues"
   },
   "devDependencies": {
+    "@oneline/core": "^0.0.19",
+    "@oneline/utils": "^0.0.5",
     "commander": "^4.1.0",
     "fastify-websocket": "^1.1.0",
     "gulp": "^4.0.2",
     "node-sass": "^4.13.1",
     "watchpack": "^1.6.0"
   },
-  "dependencies": {
-    "@oneline/core": "^0.0.19",
-    "@oneline/utils": "^0.0.5"
-  }
+  "dependencies": {}
 }
