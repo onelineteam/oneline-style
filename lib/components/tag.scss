@@ -2,5 +2,6 @@
   display: inline-block;
   padding: size(2) size(8);
   color: #ffffff;
+  cursor: pointer;
   @include colorStyle(background-color);
 }

@@ -8,7 +8,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: size(8);
      
     &_m {
       flex: 1;
@@ -17,15 +17,15 @@
   }
 
   &-b {
-    border: 1px solid #eee;
+    border: size(1) solid #eee;
   }
 
   &-br {
-    border-radius: 3px;
+    border-radius: size(3);
   }
 
   &_pill {
-    border-radius: 24px;
+    border-radius: size(24);
     .ol-btn {
       &:focus, &:hover {
         box-shadow: unset;

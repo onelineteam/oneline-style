@@ -34,7 +34,16 @@ const cssTemplate = `
   <link rel="stylesheet" href="/css/index.css" type="text/css">
 `
 
-const app = start(5000, { static: { prefix: "/css", path: path.resolve(__dirname, "../../dist") } }, [], () => {
+const app = start(5000, { 
+  static: { 
+    prefix: "/css", 
+    path: path.resolve(__dirname, "../../dist") 
+  },
+  cros: {
+    origin: '*',
+    allowedHeaders:  ["Verify", "Origin", "Access-Control-Allow-Origin", "Access-Control-Request-Headers", "X-Requested-With", "Content-Type", "Accept", "Referer", "User-Agent"]
+  }
+ }, [], () => {
   console.log("启动成功")
 })
 
@@ -49,6 +58,10 @@ function getCommon() {
 
 app.get("/view/*", (request, response) => {
   // console.log(request);
+
+  console.log(":::::", request);
+
+
   const page = request.params["*"];
   const file = path.resolve(__dirname, "../pages/" + page);
   if (fs.existsSync(file)) {
@@ -64,7 +77,6 @@ app.get("/view/*", (request, response) => {
       console.log(indexs)
       if(indexs) {
         content = content.substring(content.indexOf(indexs[0]) + indexs[0].length, content.indexOf(indexs[1]));
-
       }
       // console.log(indexs, indexs[0], indexs[1], content.indexOf(indexs[0]), content.indexOf(indexs[1]))
 

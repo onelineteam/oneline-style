@@ -2,9 +2,9 @@
 button {
   position: relative;
   display: inline-block;
-  padding: 8px 24px;
+  padding: size(8) size(24);
   // font-weight: 700;
-  font-size: 17px;
+  font-size: size(17);
   text-align: center;
   vertical-align: bottom;
   text-decoration: none;
@@ -12,8 +12,8 @@ button {
   background-color: transparent;
   outline: none;
   line-height: 1.42;
-  border-radius: 4px;
-  border: 1px solid transparent;
+  border-radius: size(4);
+  border: size(1) solid transparent;
   overflow: hidden;
 
   &:focus {
@@ -30,9 +30,9 @@ button {
     display: inline-block;
     align-items: center;
     vertical-align: middle;
-    max-width: 24px;
-    max-height: 24px;
-    margin-right: 8px;
+    max-width: size(24);
+    max-height: size(24);
+    margin-right: size(8);
   }
 }
 
@@ -105,21 +105,21 @@ button {
 
 //
 .ol-btn_circle {
-  width: 32px;
-  height: 32px;
+  width: size(32);
+  height: size(32);
   border-radius: 100%;
   padding: 0;
   text-align: center;
   display: flex;
-  font-size: 12px;
+  font-size: size(12);
   align-items: center;
   justify-content: center;
   overflow: hidden;
   image,
   img,
   svg {
-    width: 16px;
-    height: 16px;
+    width: size(16);
+    height: size(16);
     fill: #fff;
     stroke: #fff;
     margin-right: unset;
@@ -138,11 +138,11 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 23px;
-    height: 23px;
-    padding: 8px;
-    border-right: rgba(0, 0, 0, 0.2) 1px solid;
-    margin-right: 8px;
+    width: size(23);
+    height: size(23);
+    padding: size(8);
+    border-right: rgba(0, 0, 0, 0.2) size(1) solid;
+    margin-right: size(8);
     font-size: 100%;
     position: relative;
 
@@ -154,7 +154,7 @@ button {
     //   top: 0;
     //   bottom: 0;
     //   background-color:rgba(0,0,0,0.2);
-    //   width: 1px;
+    //   width: size(1);
     //   content: " ";
 
     // }

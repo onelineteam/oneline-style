@@ -16,12 +16,31 @@
 
   &.ol-tabs-h {
     flex-direction: row;
+    &_l {
+      .ol-tab__active::after {
+        left: 0;
+        right: size(-1);
+        top: 0;
+        bottom: 0;
+        height: auto;
+        width: auto;
+        transform: none;
+        border-right: size(2) solid --color-danger--;
+        background: --color-light--;
+      }
+      .ol-tabs__hd { 
+        flex-basis: size(90)!important;
+        width: size(90)!important;
+      }
+    }
+
     .ol-tabs__hd { 
       width: size(120); 
       flex-basis: size(120);
       flex-direction: column;
       flex: 0 0 size(120);
       text-align: center;
+      
     }
 
     .ol-tab__active::after { 
@@ -40,6 +59,8 @@
       display: block;
       padding: 8px 20px;
       color: #666;
+      position: relative;
+      z-index:1;
     }
     .ol-a:hover {
       text-decoration: none;

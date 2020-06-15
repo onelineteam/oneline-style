@@ -2,7 +2,7 @@
 @mixin loopSize($name, $size) {
   @each $s in $size {
     &-#{$s} {
-      #{$name}: size($s);
+      #{$name}: size($s)!important;
     }
   }
 }
@@ -10,7 +10,7 @@
 @mixin loopPerSize($name) {
   @for $i from 1 through 24 {
     &-#{$i} {
-      #{$name}: nth($per-sizes, $i)#{"%"};
+      #{$name}: nth($per-sizes,$i)#{"%!important"};
     }
   }
 }
@@ -18,18 +18,18 @@
 @mixin loopSpacing($name, $size) {
   @each $s in $size {
     &-#{$s} {
-      #{$name}: size($s);
+      #{$name}: size($s)!important;
       &__l {
-        #{$name}-left: size($s);
+        #{$name}-left: size($s)!important;
       }
       &__r {
-        #{$name}-right: size($s);
+        #{$name}-right: size($s)!important;
       }
       &__t {
-        #{$name}-top: size($s);
+        #{$name}-top: size($s)!important;
       }
       &__b {
-        #{$name}-bottom: size($s);
+        #{$name}-bottom: size($s)!important;
       }
     }
   }
@@ -108,16 +108,16 @@
 @mixin loopPosition($size, $unit) {
   @each $s in $size {
     &__l-#{$s} {
-      left: #{$s * --size-mult--}#{$unit} !important;
+      left:  size($s) !important;
     }
     &__r-#{$s} {
-      right: #{$s * --size-mult--}#{$unit} !important;
+      right: size($s) !important;
     }
     &__t-#{$s} {
-      top: #{$s * --size-mult--}#{$unit} !important;
+      top: size($s) !important;
     }
     &__b-#{$s} {
-      bottom: #{$s * --size-mult--}#{$unit} !important;
+      bottom: size($s) !important;
     }
   }
 }

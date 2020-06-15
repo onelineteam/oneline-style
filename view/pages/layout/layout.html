@@ -48,7 +48,7 @@
   <div class="code-box">
     <div class="code-box-demo">
 
-      <div class="ol-layout">
+      <div class="ol-layout" id='lay-1'>
         <header class="ol-layout-header">头部</header>
         <main class="ol-layout-content">主体内容</main>
         <footer class='ol-layout-footer'>底部</footer>
@@ -62,7 +62,7 @@
         <p>框架布局以 ol-layout作为主容器， 容器下分为 ol-layout-header, ol-layout-content, ol-layout-footer</p>
       </div>
     </div>
-    <div class="code-box-actions"></div>
+    <div class="code-box-actions" target='lay-1'></div>
   </div>
 
   <!--  -->
@@ -72,7 +72,7 @@
   <div class="code-box">
     <div class="code-box-demo">
 
-      <div class="ol-layout  ol-layout-has-sider">
+      <div class="ol-layout  ol-layout-has-sider" id='lay-2'>
         <aside class="ol-layout-sider" style='width: 200px;'>
            <div class="ol-layout-sider-children">左边</div>
         </aside>
@@ -91,7 +91,7 @@
         <p>如果涉及到小边的框架布局， 加入与ol-layout 平级的ol-layout-has-sider, 其容器下有ol-layout-sider, 该sider下有 ol-layout-sider-children</p>
       </div>
     </div>
-    <div class="code-box-actions"></div>
+    <div class="code-box-actions" target='lay-2'></div>
   </div>
 
   <!--  -->
@@ -112,7 +112,7 @@
   <div class="code-box">
     <div class="code-box-demo">
 
-      <div class="ol-layout">
+      <div class="ol-layout" id='lay-3'>
         <header class="ol-layout-header">头部</header> 
         <section class="ol-layout   ol-layout-has-sider">
           <aside class="ol-layout-sider" style='width: 200px;'>
@@ -131,7 +131,7 @@
         <p>ol-layout， ol-layout-has-sider 可以相互嵌套， 来完成不一样的布局形似。</p>
       </div>
     </div>
-    <div class="code-box-actions"></div>
+    <div class="code-box-actions" target='lay-3'></div>
   </div>
 
   <!--  -->
@@ -146,7 +146,7 @@
   <div class="code-box">
     <div class="code-box-demo">
 
-      <div class="ol-layout">
+      <div class="ol-layout" id='lay-4'>
         <header class="ol-layout-header">头部</header> 
         <section class="ol-layout   ol-layout-has-sider">
           <main class="ol-layout-content">主体内容</main>
@@ -165,7 +165,7 @@
         <p>ol-layout子类顺序不一样， 展示效果也不一样</p>
       </div>
     </div>
-    <div class="code-box-actions"></div>
+    <div class="code-box-actions" target='lay-4'></div>
   </div>
 
   <!--  -->

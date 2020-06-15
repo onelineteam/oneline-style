@@ -1,11 +1,11 @@
 .ol-phone {
   &-wrapper {
     background: #eee!important;
-    padding: 30px 0;
+    padding: size(30) 0;
   }
 
-  width: 375px;
-  border-radius: 10px;
+  width: size(375);
+  border-radius: size(10);
   background-color: #fff;
   overflow: auto;
   margin: 0 auto;  
