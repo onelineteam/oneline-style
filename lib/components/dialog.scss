@@ -1,0 +1,47 @@
+.ol-dialog {
+    border: --color-light-- size(1) solid;
+    border-radius: size(5);
+    &__bd, &__hd {
+      padding: size(8);
+    }
+
+
+    &__hd {
+        font-size: size(16);
+        font-weight: 700;
+        border-bottom: --color-light-- size(1) solid;
+    }
+
+    &__bd {
+        font-size: size(12);
+    }
+
+    &__actions {
+        display: flex;
+        border-top: --color-light-- size(1) solid;
+        button, .ol-btn {
+            flex: 1;
+            border-radius: 0;
+            color: #000;
+            position: relative;
+            font-size: size(14);
+            &::after {
+               display: block;
+               content: ' ';
+               width: size(1);
+               position: absolute;
+               right: 0;
+               top: size(-1);
+               bottom: size(-1);
+               background: --color-light--;
+            }
+           
+        }
+
+        button:last-child, .ol-btn:last-child {
+            &::after {
+                width: 0;
+            }
+        }
+    }
+}

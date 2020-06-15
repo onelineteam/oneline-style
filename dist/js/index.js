@@ -2,6 +2,8 @@
   content = content.replace(/<(\/?)(p|div|span)\b/ig, "<$1View")
   content = content.replace(/<(\/?)(label|i|b|a)\b/ig, "<$1Text");
   content = content.replace(/<(\/?)(img\b)/ig, "<$1Image");
+  content = content.replace(/<(\/?)(button\b)/ig, "<$1Button");
+  content = content.replace(/<(\/?)(input\b)/ig, "<$1Input");
 
   content = content.replace(/class=/ig, "className=");
   content = content.replace(/href=/ig, "href=");
