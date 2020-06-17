@@ -34,3 +34,17 @@ page, view, image, text
     // -webkit-line-clamp: 2;
     // -webkit-box-orient: vertical;  
 }
+
+.ol-oc {
+  &-0 {
+    opacity: 0!important;
+  }
+  @for $s from 1 to 10 {
+    &-#{$s} {
+      opacity: $s/10!important;
+    }
+  }
+ 
+
+
+}

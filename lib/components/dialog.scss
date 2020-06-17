@@ -1,6 +1,29 @@
 .ol-dialog {
     border: --color-light-- size(1) solid;
     border-radius: size(5);
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background-color: #fff;
+
+    &-wrap, &-overlayer {
+        position: absolute;
+        left: 0; 
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+    }
+
+    &-overlayer {
+      background-color: #000;
+      opacity: 0.6;
+      z-index: 0;  
+    }
+
     &__bd, &__hd {
       padding: size(8);
     }
