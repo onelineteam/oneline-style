@@ -1,6 +1,6 @@
 {
   "name": "@oneline/style",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "oneline 样式库",
   "author": "keep2zero <towaywu@gmail.com>",
   "homepage": "https://github.com/onelineteam/oneline-style/tree/master#readme",
@@ -11,10 +11,7 @@
   },
   "files": [
     "lib",
-    "dist/index.css",
-    "dist/index.min.css",
-    "dist/index.app.css",
-    "dist/index.app.min.css"
+    "dist/index.*"
   ],
   "repository": {
     "type": "git",
