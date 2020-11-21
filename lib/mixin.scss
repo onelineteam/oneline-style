@@ -38,13 +38,14 @@
 @mixin loopBorder($size) {
   @each $s in $size {
     @each $type in --color-style-- {
+    
       &-#{$type}_#{$s} {
-        border: size($s) --color-#{$type}-- solid;
+        border: size($s)  --color-#{$type}-- solid;
         &__l {
-          border-left: size($s) --color-#{$type}-- solid;
+          border-left: size($s)  --color-#{$type}-- solid;
         }
         &__r {
-          border-right: size($s) --color-#{$type}-- solid;
+          border-right: size($s)  --color-#{$type}-- solid;
         }
         &__t {
           border-top: size($s) --color-#{$type}-- solid;

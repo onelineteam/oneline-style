@@ -42,5 +42,8 @@
     "node-sass": "^4.13.1",
     "watchpack": "^1.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "copyfiles": "^2.3.0",
+    "uglifycss": "0.0.29"
+  }
 }

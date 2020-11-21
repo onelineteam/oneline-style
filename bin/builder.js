@@ -2,6 +2,7 @@ const { WayArray } = require('@oneline/utils');
 const sass = require('node-sass');
 const path = require('path');
 const fs = require('fs');
+const ugl = require('uglifycss');
 const scssVar = require('../lib/variable.js');
 
 function resolve(src) {
@@ -41,7 +42,7 @@ module.exports = function builder(type = "pc", isMin) {
 
  
 
-  const min = isMin ? 'compressed' : 'expanded';
+  // const min = isMin ? 'compressed' : 'expanded';
 
 
   const pathMap = {};
@@ -52,7 +53,7 @@ module.exports = function builder(type = "pc", isMin) {
     watch: true,
     file: resolve("../lib/index.scss"),
     outFile: resolve('../dist'),
-    outputStyle: min, //compact | compressed | expanded
+    outputStyle: 'expanded', //compact | compressed | expanded
     importer(url, prev, done) {
       
       // console.log(prev, abpath, url);
@@ -94,6 +95,12 @@ module.exports = function builder(type = "pc", isMin) {
       let compilerResult = result.css.toString("utf-8");
       compilerResult = replaceVar(compilerResult, variable);
       // console.log(compilerResult)
+
+      ////////////////////////////////////////////////////////////////
+      if(isMin) {
+       compilerResult = ugl.processString(compilerResult);
+      }
+      /////////
       const dist = ["../dist/"];
       const filename = type == 'app' ? 'index.app' : 'index';
       dist.push(filename);

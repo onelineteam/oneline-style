@@ -3,13 +3,17 @@ const Watchpack = require('watchpack');
 const watch = new Watchpack({ poll: true });
 const path = require('path');
 const fs = require('fs');
+const copy = require('copyfiles');
+
+//复制静态文件
+copy([path.resolve(__dirname, '../icon') + '/*', path.resolve(__dirname, '../js') + '/*', path.resolve(__dirname, "../../dist")], {all: true, flat: false, up:8}, ()=>{})
+
+
 const builder = require('../../bin/builder')
-
-
 const appFile = path.resolve(__dirname, '../../lib');
 const htmlFile = path.resolve(__dirname, '../pages');
-let socket = null;
 
+let socket = null;
 
 watch.watch([], [appFile, htmlFile], Date.now());
 watch.on('change', (filePath) => {
@@ -31,7 +35,7 @@ const socketTemplate = `<script>
     </script>
 `
 const cssTemplate = `
-  <link rel="stylesheet" href="/css/index.css" type="text/css">
+  <link rel="stylesheet" href="/css/index.min.css" type="text/css">
 `
 
 const app = start(5000, { 
@@ -59,7 +63,7 @@ function getCommon() {
 app.get("/view/*", (request, response) => {
   // console.log(request);
 
-  console.log(":::::", request);
+  // console.log(":::::", request);
 
 
   const page = request.params["*"];
@@ -68,13 +72,13 @@ app.get("/view/*", (request, response) => {
     response.type("text/html")
     let content = "";
     if (page === 'index.html') {
-      content = index;
+      content = "index";
     } else {
       const fileData = fs.readFileSync(file);
       content = fileData.toString();
 
       const indexs = content.match(/<\/?body.*?>/ig);
-      console.log(indexs)
+      // console.log(indexs)
       if(indexs) {
         content = content.substring(content.indexOf(indexs[0]) + indexs[0].length, content.indexOf(indexs[1]));
       }
