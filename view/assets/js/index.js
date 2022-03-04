@@ -19,16 +19,22 @@ $(function () {
     const itemHref = item.getAttribute("href");
     const path = location.pathname;
     if (path === itemHref) {
+     // $(".example-nav-items").css("display", "none");
+      $(item).parents(".example-nav-items").css("display", "block");
       $(item).addClass('active');
     } else {
       $(item).removeClass('active');
     }
   })
 
+  $('.example-nav>li h3').click(function(){
+    let val = "none";
+    if($(this).next().css("display") == "none") val = 'block';
+     $(this).next().css("display", val);
+  })
+
 
   makeActions();
-  
-
 })
 
 function insertToVsCode(elm, type){
@@ -89,7 +95,6 @@ function makeActions() {
 
   })
   
-
 
   copyCode('.copy-taro', 'taro');
   copyCode('.copy');
