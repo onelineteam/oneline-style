@@ -30,12 +30,13 @@ module.exports = function builder(type = "pc", isMin) {
   const fsSizes = new WayArray(8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60)
   const perSizes = new WayArray();
   for(let i = 1; i <= 24; i++ ) perSizes.push(100/i);
+
   
   const variable = {
     "fs-sizes": fsSizes,
     "per-sizes": perSizes,
     "size-unit": type == 'app' ? 'rpx' : 'px',
-    "size-mult": type == 'app' ? 2 : 1,
+    "size-mult": ['app','taro'].indexOf(type) > -1 ? 2 : 1,
     ...scssVar
   }
   console.log(isMin, variable)
@@ -102,7 +103,7 @@ module.exports = function builder(type = "pc", isMin) {
       }
       /////////
       const dist = ["../dist/"];
-      const filename = type == 'app' ? 'index.app' : 'index';
+      const filename = type == 'pc' ? 'index' : 'index.' + type;
       dist.push(filename);
 
       isMin && dist.push(".min");
