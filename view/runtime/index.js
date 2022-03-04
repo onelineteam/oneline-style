@@ -6,7 +6,9 @@ const fs = require('fs');
 const copy = require('copyfiles');
 
 //复制静态文件
-copy([path.resolve(__dirname, '../icon') + '/*', path.resolve(__dirname, '../js') + '/*', path.resolve(__dirname, "../../dist")], {all: true, flat: false, up:8}, ()=>{})
+copy([path.resolve(__dirname, '../icon') + '/*', 
+path.resolve(__dirname, '../js') + '/*', 
+path.resolve(__dirname, "../../dist")], {all: true, flat: false, up:2}, ()=>{})
 
 
 const builder = require('../../bin/builder')
@@ -66,14 +68,15 @@ app.get("/view/*", (request, response) => {
   // console.log(":::::", request);
 
 
-  const page = request.params["*"];
+  const page = request.params["*"] || "index.html";
+  console.log(page, "----------")
   const file = path.resolve(__dirname, "../pages/" + page);
   if (fs.existsSync(file)) {
     response.type("text/html")
     let content = "";
-    if (page === 'index.html') {
-      content = "index";
-    } else {
+    //if (page === 'index.html') {
+    //  content = "index";
+   // } else {
       const fileData = fs.readFileSync(file);
       content = fileData.toString();
 
@@ -82,12 +85,10 @@ app.get("/view/*", (request, response) => {
       if(indexs) {
         content = content.substring(content.indexOf(indexs[0]) + indexs[0].length, content.indexOf(indexs[1]));
       }
-      // console.log(indexs, indexs[0], indexs[1], content.indexOf(indexs[0]), content.indexOf(indexs[1]))
-
-      // console.log(content)
+      
 
       content = getCommon().replace('{{body}}', content);
-    }
+    //}
 
     
 

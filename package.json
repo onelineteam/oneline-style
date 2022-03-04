@@ -22,13 +22,13 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "prepublish": "yarn run build",
-    "build": "yarn run compiler && yarn run compiler:min && yarn run compiler:app && yarn run compiler:app:min",
-    "compiler": "bin/oneline-style",
-    "compiler:min": "bin/oneline-style --min",
-    "compiler:app:min": "bin/oneline-style --type app --min",
-    "compiler:app": "bin/oneline-style --type app",
-    "dev": "node view/runtime/index.js"
+    "prepublish": "npm run build",
+    "build": "npm run compiler && npm run compiler:min && npm run compiler:app && npm run compiler:app:min",
+    "compiler": "node bin/oneline-style",
+    "compiler:min": "node bin/oneline-style --min",
+    "compiler:app:min": "node bin/oneline-style --type app --min",
+    "compiler:app": "node bin/oneline-style --type app",
+    "dev": "node ./view/runtime/index.js"
   },
   "bugs": {
     "url": "https://github.com/onelineteam/oneline-style/issues"
@@ -39,7 +39,7 @@
     "commander": "^4.1.0",
     "fastify-websocket": "^1.1.0",
     "gulp": "^4.0.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "watchpack": "^1.6.0"
   },
   "dependencies": {
