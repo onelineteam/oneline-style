@@ -10,7 +10,7 @@ const fileType = {
   "png": "image/png",
   "jpeg": "image/jpeg",
   "jpg": "image/jpg",
-  "svg": "application/svg"
+  "svg": "image/svg+xml"
 }
 
 const builder = require('../bin/builder')
