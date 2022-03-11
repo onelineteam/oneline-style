@@ -1,0 +1,28 @@
+.ol-badge {
+  display: inline-block;
+  position: relative;
+  &__point, &__count {
+    display: inline-block; 
+    border-radius: 100%;
+    background-color: --color-danger--;
+    position: absolute;
+    
+  }
+
+  &__point {
+    width: size(6);
+    height: size(6);
+    top: size(-2);
+    right: size(-3);
+  }
+
+  &__count {
+    font-size: size(9);
+    width: size(18);
+    height: size(18);
+    color: #fff;
+    text-align: center;
+    top: size(-8);
+    right: size(-10);
+  }
+}

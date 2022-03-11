@@ -4,7 +4,7 @@ button {
   display: inline-block;
   padding: size(8) size(24);
   // font-weight: 700;
-  font-size: size(17);
+  font-size: size(14);
   text-align: center;
   vertical-align: bottom;
   text-decoration: none;
@@ -130,7 +130,7 @@ button {
 .ol-btn-sp {
   display: flex;
   align-items: center;
-  padding: 0;
+  padding: 0 size(8) 0 0;
   image,
   img,
   svg,
@@ -138,9 +138,9 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: size(23);
-    height: size(23);
-    padding: size(8);
+    width: size(20);
+    height: size(20);
+    padding: size(6);
     border-right: rgba(0, 0, 0, 0.2) size(1) solid;
     margin-right: size(8);
     font-size: 100%;
@@ -159,6 +159,45 @@ button {
 
     // }
   }
+
+  &.ol-btn_sm,
+  &.ol-btn_md {
+    padding: 0 size(6) 0 0;
+  }
+
+  &.ol-btn_lg {
+    padding: 0 size(8) 0 0;
+  }
+
+  &.ol-btn_sm {
+    image,
+    img,
+    svg,
+    .ol-btn__icon {
+      width: size(10);
+      height: size(10);
+    }
+  }
+
+  &.ol-btn_md {
+    image,
+    img,
+    svg,
+    .ol-btn__icon {
+      width: size(15);
+      height: size(15);
+      
+    }
+  }
+  &.ol-btn_lg {
+    image,
+    img,
+    svg,
+    .ol-btn__icon {
+      width: size(28);
+      height: size(28);
+    }
+  }
 }
 
 //大小
@@ -174,7 +213,6 @@ button {
 
 .ol-btn_lg {
   padding: size(12) size(36);
-
 }
 
 //加载

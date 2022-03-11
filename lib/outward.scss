@@ -8,6 +8,9 @@
 
 .ol {
   &-b {
+    &-no {
+      border: none;
+    }
     @include loopBorder($border-size)
   }
   

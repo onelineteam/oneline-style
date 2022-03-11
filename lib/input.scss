@@ -73,6 +73,9 @@ input {
 //
 
 .ol-input {
+
+
+
   //
   &-affix {
     display: inline-flex;
@@ -179,4 +182,25 @@ input {
   &:hover {
     box-shadow: none;
   }
+}
+
+
+.ol-input_bg {
+  padding: size(5) size(12);
+  display: inline-block;
+  border-radius: size(5);
+  .ol-input, input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  .ol-input-addon, .ol-input-affix {
+    border: none;
+  }
+
+  
 }

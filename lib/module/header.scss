@@ -1,0 +1,27 @@
+.ol-header {
+  display: flex;
+  align-items:center;
+  &__logo,  &__items {
+    flex: 1 1;
+     
+  }
+
+  &__logo {
+    font-size: size(20);
+    font-weight: 600;
+  }
+
+  &__action {
+    display: flex; 
+    justify-content: space-around;
+    flex-grow: 1 1;
+  }
+
+
+  &__auto {
+    flex: 1 1;
+  }
+  
+
+
+}

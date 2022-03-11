@@ -1,4 +1,4 @@
-const color = {
+const olColor = {
   "color-default": "#eee", 
   "color-primary": "#4d79f6",
   "color-primary-hover": "#255df7",
@@ -29,11 +29,4 @@ const color = {
   "color-style": ['primary', 'danger', 'success', 'info', 'warning', 'dark', "pink", "purple", "muted", "link", 'white', 'light']
 }
 
-
-
-
-
-
-module.exports = {
-  ...color
-}
+module.exports = {olColor}

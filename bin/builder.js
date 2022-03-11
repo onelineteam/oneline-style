@@ -1,9 +1,12 @@
-const { WayArray } = require('@oneline/utils');
+//const { WayArray } = require('@oneline/utils');
+const {fontSize, perSize} = require('../config/size');
+const {olColor} = require('../config/color');
 const sass = require('node-sass');
 const path = require('path');
 const fs = require('fs');
 const ugl = require('uglifycss');
-const scssVar = require('../lib/variable.js');
+//const scssVar = require('../lib/variable.js');
+
 
 function resolve(src) {
   return path.resolve(__dirname, src);
@@ -27,18 +30,14 @@ function replaceVar(content, variable) {
 
 module.exports = function builder(type = "pc", isMin) {
 
-  const fsSizes = new WayArray(8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 50, 60)
-  const perSizes = new WayArray();
-  for(let i = 1; i <= 24; i++ ) perSizes.push(100/i);
-  
   const variable = {
-    "fs-sizes": fsSizes,
-    "per-sizes": perSizes,
+    "fs-sizes": fontSize,
+    "per-sizes": perSize,
     "size-unit": type == 'app' ? 'rpx' : 'px',
     "size-mult": type == 'app' ? 2 : 1,
-    ...scssVar
+    ...olColor
   }
-  console.log(isMin, variable)
+  //console.log(isMin, variable)
 
  
 

@@ -3,6 +3,7 @@ const Watchpack = require('watchpack');
 const watch = new Watchpack({ poll: true });
 const path = require('path');
 const fs = require('fs');
+const {parseInc}  = require('./read-include');
  
 const fileType = {
   "css": "text/css",
@@ -30,16 +31,20 @@ watch.on('change', (filePath) => {
 
 
 const socketTemplate = `<script>
-    const socket = new WebSocket("ws://0.0.0.0:5000/live");
+    const socket = new WebSocket("ws://127.0.0.1:5000/live");
+    let timeout = -1;
       socket.onmessage = (msgEvt) => {
          if(msgEvt.data == "true") {
-           window.location.reload()
+           clearTimeout(timeout);
+          timeout = setTimeout(()=>{
+             window.location.reload()
+           }, 2000);
          } 
     }
     </script>
 `
 const cssTemplate = `
-  <link rel="stylesheet" href="/css/index.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/index.css" type="text/css">
 `
 
 const app = start(5000, {
@@ -78,11 +83,14 @@ app.get("/*", (request, response) => {
   const file = path.resolve(__dirname, "../view/" + page);
   if (fs.existsSync(file)) {
     const fileData = fs.readFileSync(file);
-    
+     
     let content = fileData.toString();
     if (page.endsWith(".html")) { 
       //const html = path.resolve(__dirname, "../view/pages/" + page);
       response.type("text/html")
+
+
+      content = parseInc(content, path.dirname(file));
       const indexs = content.match(/<\/?body.*?>/ig);
       if (indexs) {
         content = content.substring(content.indexOf(indexs[0]) + indexs[0].length, content.indexOf(indexs[1]));
@@ -118,6 +126,9 @@ app.register(require('fastify-websocket'), {
 })
 
 function handle(conn) {
+ 
   conn.pipe(conn) // creates an echo server
   socket = conn.socket;
+ 
+  
 }

@@ -5,64 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>主页</title>
+  <title>@oneline/style - onelineteam</title>
   <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-  <style>
-    body {
-      background: #eee;
-    }
-    .home .ol-layout-header {
-      color: #fff;
-    }
-
-    .example-nav {
-      
-    }
-
-    .example-nav h3 { 
-       color: #666;
-       border-bottom: #bbb 1px solid;
-       margin: 16px 0;
-       padding: 6px 20px;
-       font-size: 12px;
-    }
-
-    .example-nav > li {
-      font-size: 16px;
-      color: #fff;
-      padding: 8px 0;
-      position: relative;
-    }
-
-     
-
-    .example-nav a {
-      font-size: 14px;
-      color: #000;
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-    }
-
-    .example-nav a.active {
-      background: #e6f7ff;
-      position: relative;
-    }
-    .example-nav a.active::after {
-      display: block;
-      content: " ";
-      position: absolute;
-      right:0;
-      width: 3px;
-      background: #1890ff;
-      top: 0;
-      bottom: 0;
-    }
-
-    .example-nav-items {
-      display: none;
-    }
-  </style>
+  <link href="/assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body class="home">
@@ -70,8 +15,8 @@
   <div class="ol-layout">
     <header class="ol-layout-header">
       <div class="ol-layout-h c-space-b">
-        <h1>@oneline/style</h1>
-        <div>github</div>
+        <h3>@oneline/style</h3>
+        <div><a class="ol-a" href='https://github.com/onelineteam/oneline-style' target="blank">Github</a></div>
       </div>
     </header>
     <section class="ol-layout   ol-layout-has-sider">
@@ -83,10 +28,10 @@
               <h3>基本样式</h3>
               <ul class="example-nav-items">
                 
-                <li><a href="/pages/basic/text-size.html" class="active">文字大小</a></li>
+                <li><a href="/pages/basic/text.html" class="active">文本</a></li>
                 <li><a href="/pages/basic/rect.html">宽度和高度</a></li>
                 <li><a href="/pages/basic/color.html">前景色和背景色</a></li>
-                <li><a href="/pages/basic/text-align.html">文本排版</a></li>
+                
                 <li><a href="/pages/basic/pdmg.html">间隙</a></li>
                 <li><a href="/pages/basic/border.html">边框圆角</a></li>
                 <li><a href="/pages/basic/block.html">行内、行块, 行高</a></li>
@@ -132,6 +77,7 @@
                 <li> <a href="/pages/components/login.html">登录</a></li> 
                 <li> <a href="/pages/components/tags.html">标签</a></li> 
                 <li> <a href="/pages/components/dialog.html">弹出框</a></li> 
+                <li><a href="/pages/components/badge.html">badge</a></li>
 
               </ul>
             </li>
@@ -143,6 +89,13 @@
                 <li> <a href="/pages/shop/order-item.html">订单项</a></li> 
                 <li> <a href="/pages/shop/product-cate.html">产品分类</a></li>
                 <li> <a href="/pages/shop/cart.html">购物车</a></li> 
+              </ul>
+            </li>
+
+            <li>
+              <h3>模块</h3>
+              <ul class="example-nav-items">
+                <li><a href="/pages/module/header.html">顶部导航</a></li>
               </ul>
             </li>
 
