@@ -34,8 +34,10 @@ module.exports = function builder(type = "pc", isMin) {
     "fs-sizes": fontSize,
     "per-sizes": perSize,
     "size-unit": type == 'app' ? 'rpx' : 'px',
-    "size-mult": type == 'app' ? 2 : 1,
+    "size-mult": ['app','taro'].indexOf(type) > -1 ? 2 : 1,
+     
     ...olColor
+    //...scssVar
   }
   //console.log(isMin, variable)
 
@@ -101,7 +103,7 @@ module.exports = function builder(type = "pc", isMin) {
       }
       /////////
       const dist = ["../dist/"];
-      const filename = type == 'app' ? 'index.app' : 'index';
+      const filename = type == 'pc' ? 'index' : 'index.' + type;
       dist.push(filename);
 
       isMin && dist.push(".min");
